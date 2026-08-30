@@ -2,7 +2,7 @@
 
 ## Automated checks
 
-- `flutter analyze` — executed 2026-08-30; no errors, five deprecation/info
+- `flutter analyze` — executed 2026-08-30; no errors, four deprecation/info
   notices from current Flutter APIs.
 - `flutter test` — executed 2026-08-30; 8 tests passed after fixes.
 - Pure rules: placement, rotation, invalid cells, inventory cap and victory.
