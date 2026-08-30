@@ -811,21 +811,25 @@ class _SettingsPageState extends State<SettingsPage> {
         children: [
           _SettingsSection(
             title: l10n.t('language'),
-            child: Column(
-              children: [
-                RadioListTile<String>(
-                  value: 'fr',
-                  groupValue: language,
-                  onChanged: (_) => _set(_save.copyWith(languageCode: 'fr')),
-                  title: Text(l10n.t('french')),
-                ),
-                RadioListTile<String>(
-                  value: 'en',
-                  groupValue: language,
-                  onChanged: (_) => _set(_save.copyWith(languageCode: 'en')),
-                  title: Text(l10n.t('english')),
-                ),
-              ],
+            child: RadioGroup<String>(
+              groupValue: language,
+              onChanged: (value) {
+                if (value != null) {
+                  _set(_save.copyWith(languageCode: value));
+                }
+              },
+              child: Column(
+                children: [
+                  RadioListTile<String>(
+                    value: 'fr',
+                    title: Text(l10n.t('french')),
+                  ),
+                  RadioListTile<String>(
+                    value: 'en',
+                    title: Text(l10n.t('english')),
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 12),
